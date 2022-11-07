@@ -6,7 +6,7 @@
   <h3 align="center">Harry Potter App</h3>
 
   <p align="center">
-    Repositório com os arquivos e a aplicação "Harry Potter App" desenvolvida durante o Curso de formação de desenvolvedor mobile em Flutter da Proz Tecnologia como tafera de avaliação do curso.
+    Repositório com os arquivos da aplicação "Harry Potter App" desenvolvida durante o Curso de formação de desenvolvedor mobile em Flutter da Proz Tecnologia como tafera de avaliação do curso.
     <br />
   </p>
 </p>
