@@ -7,6 +7,9 @@ class AppThemes {
       ThemeData.dark().copyWith(
         primaryColor: AppColors.primary,
         canvasColor: AppColors.primary,
+        scrollbarTheme: Theme.of(context).scrollbarTheme.copyWith(
+              thumbColor: MaterialStateProperty.all(AppColors.primary),
+            ),
         scaffoldBackgroundColor: Colors.transparent,
         appBarTheme: AppBarTheme.of(context).copyWith(
           backgroundColor: AppColors.primary,

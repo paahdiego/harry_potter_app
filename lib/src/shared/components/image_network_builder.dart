@@ -36,6 +36,9 @@ class ImageNetworkBuilder extends StatelessWidget {
             child: Center(
               child: CircularProgressIndicator(
                 value: currentProgress,
+                valueColor: const AlwaysStoppedAnimation<Color>(
+                  AppColors.primary,
+                ),
               ),
             ),
           );
@@ -43,6 +46,7 @@ class ImageNetworkBuilder extends StatelessWidget {
       },
       errorBuilder: (context, error, _) {
         return Container(
+          color: AppColors.secondary,
           padding: const EdgeInsets.all(5),
           alignment: Alignment.center,
           child: Column(
@@ -52,7 +56,7 @@ class ImageNetworkBuilder extends StatelessWidget {
               Text(
                 'image not found',
                 textAlign: TextAlign.center,
-                maxLines: 1,
+                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: AppTextStyles.bodyText1(context)?.copyWith(fontSize: 10),
               ),

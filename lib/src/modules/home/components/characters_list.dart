@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
 import 'package:harry_potter_app/src/app/app_routes.dart';
 import 'package:harry_potter_app/src/core/app_colors.dart';
 import 'package:harry_potter_app/src/models/character_model.dart';
+import 'package:harry_potter_app/src/modules/character/components/character_image_box.dart';
 import 'package:harry_potter_app/src/shared/components/default_refresh_indicator.dart';
-import 'package:harry_potter_app/src/shared/components/image_network_builder.dart';
 
 class CharactersList extends StatelessWidget {
   const CharactersList({
@@ -32,7 +31,7 @@ class CharactersList extends StatelessWidget {
           itemBuilder: (context, index) {
             final character = characters[index];
 
-            final flipper = index % 2 == 0;
+            final colorFlipper = index % 2 == 0;
 
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -46,7 +45,8 @@ class CharactersList extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: flipper ? AppColors.primary : AppColors.secondary,
+                    color:
+                        colorFlipper ? AppColors.primary : AppColors.secondary,
                     borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(128),
                       topLeft: Radius.circular(128),
@@ -64,7 +64,6 @@ class CharactersList extends StatelessWidget {
                           children: [
                             Text(character.name),
                             Text(character.house),
-                            Text(character.house),
                             Text("played by:${character.actor}"),
                           ],
                         ),
@@ -76,34 +75,6 @@ class CharactersList extends StatelessWidget {
             );
           },
           itemCount: characters.length,
-        ),
-      ),
-    );
-  }
-}
-
-class CharacterImageBox extends StatelessWidget {
-  const CharacterImageBox({
-    Key? key,
-    required this.characterImageUrl,
-    this.size = 80,
-  }) : super(key: key);
-
-  final String characterImageUrl;
-  final double size;
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: const BorderRadius.all(
-        Radius.circular(500),
-      ),
-      child: SizedBox(
-        width: size,
-        height: size,
-        child: ImageNetworkBuilder(
-          characterImageUrl,
-          boxFit: BoxFit.cover,
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:harry_potter_app/src/modules/character/character_repository.dart';
+import 'package:harry_potter_app/src/repositories/character_repository.dart';
 import 'package:harry_potter_app/src/modules/home/home_state.dart';
 
 class HomeController {

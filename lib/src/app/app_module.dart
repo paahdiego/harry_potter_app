@@ -7,7 +7,7 @@ import 'package:harry_potter_app/src/modules/splash/splash_page.dart';
 
 class AppModule extends Module {
   final animationDuration = const Duration(milliseconds: 600);
-  final TransitionType transitionType = TransitionType.scale;
+  final transitionType = TransitionType.scale;
 
   @override
   List<ModularRoute> get routes => [

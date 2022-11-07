@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:harry_potter_app/src/core/app_colors.dart';
 import 'package:harry_potter_app/src/models/character_model.dart';
 import 'package:harry_potter_app/src/modules/character/components/field_box.dart';
-import 'package:harry_potter_app/src/modules/home/components/characters_list.dart';
+import 'package:harry_potter_app/src/modules/character/components/character_image_box.dart';
 import 'package:harry_potter_app/src/shared/components/custom_app_bar.dart';
 
 class CharacterDetailsPage extends StatelessWidget {
@@ -41,6 +40,7 @@ class CharacterDetailsPage extends StatelessWidget {
               FieldBox(title: "Wood", value: character.wand.wood),
               FieldBox(title: "Core", value: character.wand.core),
               FieldBox(title: "Length", value: "${character.wand.length} cm"),
+              const SizedBox(height: 20),
             ],
           ),
         ),
